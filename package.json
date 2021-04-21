@@ -1,5 +1,5 @@
 {
-  "name": "web3-provider",
+  "name": "simple-web3-provider",
   "version": "0.0.1",
   "description": "A web3 provider with retries under the hood",
   "main": "lib/index.js",

@@ -5,7 +5,7 @@ This library creates a web3 provider that delegates sending all signing methods 
 ## Installation
 
 ```
-npm install @zeriontech/web3-provider
+npm install simple-web3-provider
 ```
 
 ## Getting Started
