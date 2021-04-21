@@ -4,8 +4,10 @@
   "description": "A web3 provider with retries under the hood",
   "main": "lib/index.js",
   "scripts": {
+    "pretest": "npm run lint",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint . --cache --fix"
   },
   "repository": {
     "type": "git",
@@ -27,11 +29,13 @@
     "ky": "^0.27.0"
   },
   "devDependencies": {
+    "eslint": "^7.24.0",
     "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1"
   },
   "lint-staged": {
-    "*.{js,ts,md}": "prettier --write"
+    "*.{js,ts,md}": "prettier --write",
+    "*.{js,ts}": "eslint --cache --fix"
   }
 }
