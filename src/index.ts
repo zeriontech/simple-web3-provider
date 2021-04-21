@@ -47,7 +47,7 @@ export class Provider {
   url: string;
   retryOptions: RetryOptions;
 
-  constructor(url: string, { maxRetries = 10 }: Options) {
+  constructor(url: string, { maxRetries = 10 }: Options = {}) {
     this.url = url;
     this.retryOptions = createKyRetryOptions({ maxRetries });
   }
