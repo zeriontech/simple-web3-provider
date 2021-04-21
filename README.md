@@ -5,6 +5,7 @@ This library creates a web3 provider that delegates sending all signing methods 
 ## Installation
 
 ```
+npm install ky # a peer dependency
 npm install simple-web3-provider
 ```
 

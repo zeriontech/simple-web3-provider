@@ -2,12 +2,19 @@
   "name": "simple-web3-provider",
   "version": "0.0.1",
   "description": "A web3 provider with retries under the hood",
-  "main": "lib/index.js",
+  "main": "lib/simple-web3-provider.js",
+  "source": "src/index.ts",
+  "exports": "./lib/simple-web3-provider.modern.js",
+  "module": "lib/simple-web3-provider.module.js",
+  "unpkg": "lib/simple-web3-provider.umd.js",
   "scripts": {
+    "start": "microbundle watch",
+    "build": "microbundle",
+    "prepare": "husky install && npm run build",
     "pretest": "npm run lint && tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install",
-    "lint": "eslint . --cache --fix"
+    "lint": "eslint . --cache --fix",
+    "size": "size-limit"
   },
   "repository": {
     "type": "git",
@@ -29,17 +36,25 @@
     "ky": "^0.27.0"
   },
   "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.10.2",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "eslint": "^7.24.0",
     "eslint-plugin-import": "^2.22.1",
     "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
+    "microbundle": "^0.13.0",
     "prettier": "^2.2.1",
+    "size-limit": "^4.10.2",
     "typescript": "^4.2.4"
   },
   "lint-staged": {
     "*.{js,ts,md}": "prettier --write",
     "*.{js,ts}": "eslint --cache --fix"
-  }
+  },
+  "size-limit": [
+    {
+      "path": "lib/simple-web3-provider.js"
+    }
+  ]
 }
