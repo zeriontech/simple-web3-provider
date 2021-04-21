@@ -1,0 +1,28 @@
+{
+  "name": "web3-provider",
+  "version": "0.0.1",
+  "description": "A web3 provider with retries under the hood",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeriontech/web3-provider.git"
+  },
+  "keywords": [
+    "web3",
+    "web3-provider",
+    "retries",
+    "ethereum"
+  ],
+  "author": "everdimension",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zeriontech/web3-provider/issues"
+  },
+  "homepage": "https://github.com/zeriontech/web3-provider#readme",
+  "dependencies": {
+    "ky": "^0.27.0"
+  }
+}
