@@ -1,6 +1,6 @@
 {
   "name": "simple-web3-provider",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A web3 provider with retries under the hood",
   "main": "lib/simple-web3-provider.js",
   "source": "src/index.ts",
