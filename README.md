@@ -23,21 +23,23 @@ const web3 = new Web3(new Provider(url, options));
 #### Provider Constructor
 
 ```typescript
-new Provider(url: string, { maxRetries }?: Options)
+new Provider(url: string, options?: Options)
 ```
 
 - `url`: An RPC Endpoint to send requests to
-- `Options`: An [Options](#Options) object
+- `options`: An [Options](#Options) object
 
 #### Options
 
 ```typescript
 interface Options {
   maxRetries?: number;
+  timeout?: number;
 }
 ```
 
-- `maxRetries`: Number of retries for failed requests
+- `maxRetries`: Number of retries for failed requests, defaults to `10`
+- `timeout`: Timeout in milliseconds for getting a response, defaults to `30000`
 
 ## License
 

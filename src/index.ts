@@ -37,6 +37,7 @@ interface SendMethod {
 
 interface Options {
   maxRetries?: number;
+  timeout?: number;
 }
 
 function createKyRetryOptions({ maxRetries }: Options): RetryOptions {
@@ -46,10 +47,12 @@ function createKyRetryOptions({ maxRetries }: Options): RetryOptions {
 export class Provider {
   url: string;
   retryOptions: RetryOptions;
+  timeout: number;
 
-  constructor(url: string, { maxRetries = 10 }: Options = {}) {
+  constructor(url: string, { maxRetries = 10, timeout = 30000 }: Options = {}) {
     this.url = url;
     this.retryOptions = createKyRetryOptions({ maxRetries });
+    this.timeout = timeout;
   }
 
   sendAsync(payload: Payload, callback: AsyncCallback) {
@@ -70,6 +73,7 @@ export class Provider {
     ky.post(this.url, {
       json: payload,
       retry: this.retryOptions,
+      timeout: this.timeout,
     })
       .json()
       .catch(handleMaybeJSONError)
