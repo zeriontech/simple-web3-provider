@@ -1,6 +1,6 @@
 /* global globalThis */
 import './globalThisPolyfill.js';
-import ky from 'ky';
+import ky, { HTTPError } from 'ky';
 import type { RetryOptions } from 'ky';
 
 const IGNORED_METHODS: Set<string> = new Set([
@@ -17,7 +17,7 @@ interface Payload {
   params: any[];
 }
 
-function handleMaybeJSONError(error: ky.HTTPError) {
+function handleMaybeJSONError(error: HTTPError) {
   try {
     return error.response.json().then(result => {
       throw result;

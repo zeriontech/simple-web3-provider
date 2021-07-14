@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/zeriontech/web3-provider#readme",
   "dependencies": {
-    "ky": "^0.27.0"
+    "ky": "^0.28.5"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.10.2",
